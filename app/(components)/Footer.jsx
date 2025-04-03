@@ -11,17 +11,17 @@ export const Footer = () => {
       links: [
         { text: "Features", href: "#features" },
         { text: "Pricing", href: "#pricing" },
-        { text: "Testimonials", href: "#testimonials" },
+        { text: "Success Stories", href: "#testimonials" },
         { text: "FAQ", href: "#faq" },
       ]
     },
     {
       title: "Resources",
       links: [
+        { text: "Fitness Blog", href: "#" },
+        { text: "Workout Tips", href: "#" },
+        { text: "Nutrition Guides", href: "#" },
         { text: "Help Center", href: "#" },
-        { text: "Blog", href: "#" },
-        { text: "Case Studies", href: "#" },
-        { text: "Webinars", href: "#" },
       ]
     },
     {
@@ -30,7 +30,7 @@ export const Footer = () => {
         { text: "About Us", href: "#" },
         { text: "Careers", href: "#" },
         { text: "Contact", href: "#" },
-        { text: "Partners", href: "#" },
+        { text: "Press", href: "#" },
       ]
     },
     {
@@ -53,7 +53,7 @@ export const Footer = () => {
               BeFitter
             </Link>
             <p className="text-gray-400 mb-4">
-              The intelligent, white-label fitness platform designed specifically for gyms. Transform your member experience with AI-powered personalization.
+              Your personal AI fitness coach. Personalized workouts, nutrition guidance, and progress tracking to help you achieve your fitness goals faster.
             </p>
             <div className="flex space-x-4">
               <SocialIcon>
@@ -76,6 +76,11 @@ export const Footer = () => {
                   <path d="M9.101 23.691v-7.98h-2.678v-3.667h2.678v-2.518c0-2.43 1.493-4.544 4.948-4.544 1.4 0 2.603.104 2.953.149v3.431h-2.025c-1.59 0-1.898.755-1.898 1.864v1.618h3.752l-.493 3.667h-3.259v7.98h-3.978z" />
                 </svg>
               </SocialIcon>
+              <SocialIcon>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </SocialIcon>
             </div>
           </div>
 
@@ -95,12 +100,18 @@ export const Footer = () => {
           ))}
         </div>
 
-        <div className="pt-8 mt-8 border-t border-gray-800 text-gray-400 text-sm">
+        <div className="pt-8 mt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>© {currentYear} BeFitter. All rights reserved.</p>
-            <div className="mt-4 md:mt-0">
-              <p>Designed with ❤️ for gym owners worldwide</p>
+            <p className="text-gray-400 text-sm">© {currentYear} BeFitter. All rights reserved.</p>
+            <div className="mt-4 md:mt-0 flex flex-wrap gap-4 justify-center">
+              <a href="#" className="text-gray-400 hover:text-white text-sm">App Store</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm">Google Play</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm">Accessibility</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm">Sitemap</a>
             </div>
+          </div>
+          <div className="mt-6 text-center text-gray-500 text-xs">
+            <p>BeFitter is not a substitute for professional medical advice. Always consult your physician before beginning any exercise program.</p>
           </div>
         </div>
       </div>

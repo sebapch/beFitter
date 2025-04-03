@@ -8,26 +8,26 @@ export const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      quote: "Since implementing BeFitter, we've seen a 15% increase in member retention in just 6 months. Our trainers love how easy it is to manage clients.",
-      author: "Jane Cooper",
-      position: "Owner",
-      gym: "Fitness Evolution",
+      quote: "I've tried dozens of fitness apps but BeFitter is the first one that actually understands my body and goals. I've lost 28 pounds in 3 months following their personalized plan!",
+      author: "Sarah M.",
+      age: "34",
+      achievement: "Lost 28 lbs",
       image: "/placeholder.jpg" // Replace with actual image path when available
     },
     {
       id: 2,
-      quote: "The branded app makes us look incredibly professional and modern. Members appreciate the personalized plans – it's a huge value-add!",
-      author: "Marcus Reynolds",
-      position: "Manager",
-      gym: "Peak Performance Gym",
+      quote: "As a busy parent with limited time, BeFitter has been a game-changer. The 20-minute workouts fit my schedule, and I've gained strength I never thought possible.",
+      author: "Michael T.",
+      age: "41",
+      achievement: "Gained muscle mass",
       image: "/placeholder.jpg" // Replace with actual image path when available
     },
     {
       id: 3,
-      quote: "The AI-powered plans have allowed our trainers to take on 30% more clients while delivering better, more personalized service.",
-      author: "Sophie Chen",
-      position: "Fitness Director",
-      gym: "Urban Health Club",
+      quote: "The nutrition guidance changed everything for me. I finally understand what to eat for my goals, and the meal plans are actually delicious and easy to prepare!",
+      author: "Jasmine K.",
+      age: "29",
+      achievement: "Improved energy levels",
       image: "/placeholder.jpg" // Replace with actual image path when available
     }
   ];
@@ -62,10 +62,10 @@ export const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            See How Gyms Like Yours Are Winning with BeFitter
+            Real People, Real Transformations
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-            Hear directly from gym owners and managers who've transformed their business.
+            See how BeFitter has helped thousands of people just like you achieve their fitness goals.
           </p>
           <div className="w-20 h-1 bg-[#007BFF] mx-auto mt-6"></div>
         </motion.div>
@@ -96,10 +96,10 @@ export const Testimonials = () => {
                 </p>
                 <div>
                   <p className="font-bold text-gray-900">
-                    {testimonials[activeTestimonial].author}
+                    {testimonials[activeTestimonial].author}, {testimonials[activeTestimonial].age}
                   </p>
-                  <p className="text-gray-600">
-                    {testimonials[activeTestimonial].position}, {testimonials[activeTestimonial].gym}
+                  <p className="text-[#007BFF] font-semibold">
+                    {testimonials[activeTestimonial].achievement}
                   </p>
                 </div>
               </div>
@@ -119,9 +119,30 @@ export const Testimonials = () => {
                 }`}
               />
             ))}
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-16 text-center"
+          >
+            <div className="bg-blue-50 p-4 md:p-6 rounded-lg inline-block max-w-2xl">
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <svg className="h-5 w-5 text-[#007BFF]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <p className="ml-3 text-gray-700">
+                  <span className="font-semibold">93% of BeFitter users report seeing visible results within the first 30 days</span> of following their personalized fitness plan.
+                </p>
+              </div>
             </div>
-            </div>
+          </motion.div>
         </div>
-        </section>
-        );
-        }
+      </div>
+    </section>
+  );
+};

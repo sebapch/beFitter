@@ -11,32 +11,32 @@ export const FAQ = () => {
 
   const faqItems = [
     {
-      question: "How does the white-labeling process work? How long does it take?",
-      answer: "White-labeling is simple and fast. Upload your logo, choose your brand colors, and customize key UI elements. We'll handle the rest. Most gyms can set up their branded app in less than a day, and full launch typically happens within 3 business days."
+      question: "How does the personalization process work?",
+      answer: "When you sign up, you'll complete a short questionnaire about your fitness goals, current level, available equipment, dietary preferences, and schedule. Our AI then creates a customized fitness and nutrition plan based on your answers. As you use the app and provide feedback on workouts and meals, your plan becomes increasingly personalized."
     },
     {
-      question: "Is the platform easy for my trainers to learn and use?",
-      answer: "Absolutely. The BeFitter platform is designed with a focus on user experience. Most trainers become comfortable with the core features in just 1-2 hours. We also provide comprehensive documentation, video tutorials, and optional live training sessions to ensure your team gets up to speed quickly."
+      question: "Do I need previous fitness experience to use BeFitter?",
+      answer: "Not at all! BeFitter is designed for all fitness levels, from complete beginners to experienced athletes. Our AI creates plans appropriate for your current level, and all exercises include detailed video demonstrations and instructions to ensure proper form."
     },
     {
-      question: "What kind of support do you offer?",
-      answer: "All plans include email support with a 24-hour response time. Our Growth Pro and Enterprise plans also include priority chat support and dedicated account managers. We offer onboarding assistance, regular check-ins, and technical support whenever you need it."
+      question: "Can I use BeFitter if I don't have gym equipment?",
+      answer: "Absolutely. During setup, you'll indicate what equipment you have access to (if any), and your workout plans will be designed accordingly. We have plenty of effective bodyweight-only workouts for those with no equipment, as well as options for minimal equipment like resistance bands or a single pair of dumbbells."
     },
     {
-      question: "Is member data secure and private?",
-      answer: "Yes, data security is our top priority. We use bank-level encryption for all data transmissions, comply with GDPR and other privacy regulations, and never share or sell your members' data. Your gym owns 100% of your data, and we provide easy export options."
+      question: "How is BeFitter different from other fitness apps?",
+      answer: "Unlike most fitness apps that offer generic plans or minimal customization, BeFitter uses advanced AI to create truly personalized workouts and nutrition guidance that adapts to your progress and feedback. Our plans evolve with you, becoming more refined and effective over time as the AI learns what works best for your unique body and goals."
     },
     {
-      question: "Can I integrate this with my existing gym management software?",
-      answer: "BeFitter offers integrations with popular gym management platforms like Mindbody, Glofox, and Wodify. For custom integrations with other systems, our Enterprise plan includes API access and integration support. Contact us to discuss your specific integration needs."
+      question: "Can I track my nutrition in the app?",
+      answer: "Yes! BeFitter includes comprehensive nutrition tracking and guidance. You can log meals, scan barcodes for quick food entry, access personalized meal suggestions, and track macronutrients. The app adjusts your nutrition recommendations based on your goals and workout intensity."
     },
     {
-      question: "What are the setup costs? Are there hidden fees?",
-      answer: "We believe in transparent pricing. There are no hidden fees or surprise charges. Setup is included in all plans, and we only charge for optional services like custom development or premium integrations, which we'll always quote upfront."
+      question: "What if I don't like a workout or it's too difficult?",
+      answer: "You can provide feedback after each workout, and the AI will adjust future recommendations accordingly. If a workout feels too challenging, you can select the 'too difficult' option, and the app will scale back the intensity. You can also swap exercises or choose alternative workouts if preferred."
     },
     {
-      question: "Can I customize the exercise library?",
-      answer: "Yes! While we provide an extensive library of exercises with professional demonstrations, you can also upload your own custom exercises with videos and instructions. This is perfect for gyms with unique training methodologies or proprietary movements."
+      question: "What happens after my free trial ends?",
+      answer: "After your 7-day free trial, you'll be automatically subscribed to your selected plan unless you cancel beforehand. You can cancel anytime directly in the app or on your account page with no questions asked. We'll send a reminder email before your trial ends."
     }
   ];
 
@@ -70,10 +70,10 @@ export const FAQ = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Have Questions? We've Got Answers.
+            Frequently Asked Questions
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-            Get the information you need to make the right decision for your gym.
+            Everything you need to know to get started on your fitness journey.
           </p>
           <div className="w-20 h-1 bg-[#007BFF] mx-auto mt-6"></div>
         </motion.div>
@@ -135,8 +135,8 @@ export const FAQ = () => {
         >
           <p className="text-gray-700">
             Still have questions? We're here to help.{" "}
-            <a href="#demo" className="text-[#007BFF] font-semibold hover:underline">
-              Contact our team
+            <a href="#contact" className="text-[#007BFF] font-semibold hover:underline">
+              Contact our support team
             </a>{" "}
             for personalized assistance.
           </p>

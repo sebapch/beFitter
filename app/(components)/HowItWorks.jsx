@@ -5,38 +5,38 @@ export const HowItWorks = () => {
   const steps = [
     {
       id: 1,
-      title: "Brand It Your Way",
-      description: "Easily upload your logo, choose your brand colors, and make the app uniquely yours in minutes. No coding required.",
+      title: "Create Your Profile",
+      description: "Tell us about your current fitness level, goals, available equipment, and preferences in just 2 minutes.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
-          <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
+          <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
         </svg>
       )
     },
     {
       id: 2,
-      title: "Empower Your Trainers",
-      description: "Provide your team with an intuitive dashboard to create AI-assisted or fully custom plans, track client progress in real-time, and communicate effectively.",
+      title: "Get Your Personalized Plan",
+      description: "Our AI instantly creates your custom workout and nutrition plans tailored to your unique needs and goals.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
-          <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zm5 2a2 2 0 11-4 0 2 2 0 014 0zm-4 7a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zm10 10v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+          <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
         </svg>
       )
     },
     {
       id: 3,
-      title: "Engage Your Members",
-      description: "Members download your branded app, receive personalized workouts and nutrition guidance, track their achievements, and stay connected to your gym ecosystem 24/7.",
+      title: "Follow Your Daily Routine",
+      description: "Access video demonstrations, track your completed workouts, and log your meals with our easy-to-use interface.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
-          <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1z" clipRule="evenodd" />
+          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
         </svg>
       )
     },
     {
       id: 4,
-      title: "Analyze & Optimize",
-      description: "Gain insights into member progress, popular exercises, and trainer activity to continuously improve your services.",
+      title: "See Your Progress & Adapt",
+      description: "Monitor your improvements, celebrate milestones, and watch as your plan evolves based on your feedback and results.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
           <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -75,10 +75,10 @@ export const HowItWorks = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Seamless Integration, Powerful Results: Your Gym, Your App, Your Success.
+            Four Simple Steps to Your Fitness Transformation
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-            Our white-label platform is designed to integrate effortlessly with your gym's operations, empowering both trainers and members.
+            Getting started with BeFitter is easy and takes just minutes. Here's how it works:
           </p>
           <div className="w-20 h-1 bg-[#007BFF] mx-auto mt-6"></div>
         </motion.div>
@@ -121,7 +121,7 @@ export const HowItWorks = () => {
         >
           <div className="inline-block bg-white px-6 py-3 rounded-lg shadow-md border border-gray-200">
             <p className="text-gray-700 font-medium">
-              Ready to transform your gym's digital experience? <span className="text-[#007BFF] font-bold">It only takes 3 days to launch your custom app.</span>
+              Ready to start your fitness journey? <span className="text-[#007BFF] font-bold">Create your account today and get your first plan in minutes.</span>
             </p>
           </div>
         </motion.div>

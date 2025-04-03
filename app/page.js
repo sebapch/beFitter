@@ -1,3 +1,6 @@
+// Home.jsx - Consumer Version
+'use client';
+
 import { CTASection } from "./(components)/CTASection";
 import { FAQ } from "./(components)/FAQ";
 import { Features } from "./(components)/Features";
@@ -6,19 +9,19 @@ import { HeroSection } from "./(components)/HeroSection";
 import { HowItWorks } from "./(components)/HowItWorks";
 import { Navbar } from "./(components)/Navbar";
 import { Pricing } from "./(components)/Pricing";
-import { ProblemSolution } from "./(components)/ProblemSolution";
+import { Benefits } from "./(components)/Benefits";
 import { Testimonials } from "./(components)/Testimonials";
-import { WhyChoose } from "./(components)/WhyChoose";
+import { AppShowcase } from "./(components)/AppShowcase";
 
 export default function Home() {
   return (
     <main className="font-oswald bg-white text-gray-900">
       <Navbar />
       <HeroSection />
-      <ProblemSolution />
+      <Benefits />
+      <AppShowcase />
       <HowItWorks />
       <Features />
-      <WhyChoose />
       <Testimonials />
       <Pricing />
       <FAQ />

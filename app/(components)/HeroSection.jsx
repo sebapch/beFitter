@@ -1,7 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export const HeroSection = () => {
   return (
@@ -15,10 +14,10 @@ export const HeroSection = () => {
             className="z-10"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Empower Your Gym & Elevate Member Experience with Your Own Branded AI Fitness App
+              Your Personal AI Fitness Coach, Available 24/7
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">
-              Drive Retention, Boost Trainer Efficiency, and Increase Revenue with the Ultimate White-Label Gym Software Solution.
+              Achieve your fitness goals faster with personalized workouts, nutrition plans, and progress tracking all in one app.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.div
@@ -26,10 +25,10 @@ export const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link 
-                  href="#demo" 
+                  href="#signup" 
                   className="inline-flex justify-center items-center px-8 py-3 border border-transparent rounded-md shadow-lg text-lg font-medium text-[#007BFF] bg-white hover:bg-gray-100 w-full sm:w-auto"
                 >
-                  Request a Personalized Demo
+                  Start Free Trial
                 </Link>
               </motion.div>
               <motion.div
@@ -40,7 +39,7 @@ export const HeroSection = () => {
                   href="#features" 
                   className="inline-flex justify-center items-center px-8 py-3 border border-white rounded-md shadow-sm text-lg font-medium text-white hover:bg-blue-700 hover:border-blue-700 w-full sm:w-auto"
                 >
-                  Learn More About Features
+                  Explore Features
                 </Link>
               </motion.div>
             </div>
@@ -53,14 +52,14 @@ export const HeroSection = () => {
             className="relative"
           >
             <div className="w-full h-[500px] relative">
-              {/* Placeholder for app mockup image */}
+              {/* App mockup */}
               <div className="absolute inset-0 bg-white rounded-lg shadow-xl overflow-hidden">
                 <div className="absolute top-0 w-full h-10 bg-gray-100 flex items-center justify-center rounded-t-lg">
                   <div className="w-14 h-1 bg-gray-300 rounded-full"></div>
                 </div>
                 <div className="pt-10 pb-4 px-4">
                   <div className="bg-[#007BFF] h-32 rounded-lg mb-4 flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">YOUR GYM LOGO</span>
+                    <span className="text-white font-bold text-lg">BeFitter</span>
                   </div>
                   <div className="space-y-3">
                     <div className="bg-gray-100 h-12 rounded-lg"></div>

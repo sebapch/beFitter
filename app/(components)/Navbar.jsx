@@ -25,17 +25,17 @@ export const Navbar = () => {
             <NavLink href="#features">Features</NavLink>
             <NavLink href="#how-it-works">How It Works</NavLink>
             <NavLink href="#pricing">Pricing</NavLink>
-            <NavLink href="#testimonials">Testimonials</NavLink>
+            <NavLink href="#testimonials">Success Stories</NavLink>
             <NavLink href="#faq">FAQ</NavLink>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <Link 
-                href="#demo" 
+                href="#signup" 
                 className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#007BFF] hover:bg-blue-700"
               >
-                Request Demo
+                Start Free Trial
               </Link>
             </motion.div>
           </div>
@@ -74,15 +74,15 @@ export const Navbar = () => {
           <MobileNavLink href="#features" onClick={() => setIsOpen(false)}>Features</MobileNavLink>
           <MobileNavLink href="#how-it-works" onClick={() => setIsOpen(false)}>How It Works</MobileNavLink>
           <MobileNavLink href="#pricing" onClick={() => setIsOpen(false)}>Pricing</MobileNavLink>
-          <MobileNavLink href="#testimonials" onClick={() => setIsOpen(false)}>Testimonials</MobileNavLink>
+          <MobileNavLink href="#testimonials" onClick={() => setIsOpen(false)}>Success Stories</MobileNavLink>
           <MobileNavLink href="#faq" onClick={() => setIsOpen(false)}>FAQ</MobileNavLink>
           <div className="mt-4">
             <Link 
-              href="#demo"
+              href="#signup"
               onClick={() => setIsOpen(false)}
               className="block w-full text-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#007BFF] hover:bg-blue-700"
             >
-              Request Demo
+              Start Free Trial
             </Link>
           </div>
         </div>
