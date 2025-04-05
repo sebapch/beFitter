@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export const AppShowcase = () => {
   const appFeatures = [
     {
-      title: "AI-Powered Workout Plans",
+      title: "Personalized Workout Plans",
       description: "Customized routines that adapt to your progress, preferences, and available equipment",
       color: "bg-blue-500"
     },
@@ -118,8 +118,8 @@ export const AppShowcase = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">Science-Based Approach</h4>
-                <p className="text-gray-600">Our AI analyzes thousands of scientific studies to create evidence-based training and nutrition plans that deliver results.</p>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Expert-Based Approach</h4>
+                <p className="text-gray-600">Our team creates evidence-based training and nutrition plans that deliver results based on professional expertise.</p>
               </div>
               
               <div className="bg-white p-5 rounded-lg shadow-md border border-gray-100">
@@ -179,9 +179,9 @@ export const AppShowcase = () => {
             href="#signup" 
             className="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-md text-base font-medium text-white bg-[#007BFF] hover:bg-blue-700 transition-colors duration-300"
           >
-            Try BeFitter Free for 7 Days
+            Get Started with BeFitter
           </a>
-          <p className="mt-3 text-sm text-gray-500">No credit card required. Cancel anytime.</p>
+          <p className="mt-3 text-sm text-gray-500">Standard and VIP plans available. Cancel anytime.</p>
         </motion.div>
       </div>
     </section>

@@ -8,10 +8,10 @@ export const Pricing = () => {
   const plans = [
     {
       id: 1,
-      name: "Basic",
-      description: "Perfect for beginners looking to start their fitness journey.",
-      monthlyPrice: 7.99,
-      annualPrice: 4.99,
+      name: "Standard",
+      description: "Perfect for most fitness enthusiasts.",
+      monthlyPrice: 15,
+      annualPrice: 12,
       features: [
         "Personalized workout plans",
         "Basic nutrition guidance",
@@ -23,13 +23,13 @@ export const Pricing = () => {
     },
     {
       id: 2,
-      name: "Premium",
+      name: "VIP",
       description: "For those serious about achieving their fitness goals faster.",
-      monthlyPrice: 14.99,
-      annualPrice: 9.99,
+      monthlyPrice: 25,
+      annualPrice: 20,
       features: [
-        "Everything in Basic",
-        "Advanced AI adaptation",
+        "Everything in Standard",
+        "Priority adaptation",
         "Detailed nutrition tracking",
         "Body measurement tracking",
         "Custom meal planning",
@@ -37,23 +37,6 @@ export const Pricing = () => {
         "Goal-specific programs"
       ],
       popular: true
-    },
-    {
-      id: 3,
-      name: "Family",
-      description: "Share the fitness journey with your loved ones.",
-      monthlyPrice: 24.99,
-      annualPrice: 19.99,
-      features: [
-        "Everything in Premium",
-        "Up to 5 family members",
-        "Family challenges",
-        "Shared progress dashboard",
-        "Personalized plans for each member",
-        "Group support features",
-        "VIP support"
-      ],
-      popular: false
     }
   ];
 
@@ -117,7 +100,7 @@ export const Pricing = () => {
             >
               Annual
               <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">
-                Save 40%
+                Save 20%
               </span>
             </button>
           </div>
@@ -128,7 +111,7 @@ export const Pricing = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
         >
           {plans.map((plan) => (
             <motion.div
@@ -155,13 +138,13 @@ export const Pricing = () => {
                 <div className="mb-6">
                   <div className="flex items-end">
                     <span className="text-4xl font-bold text-gray-900">
-                      ${isAnnual ? plan.annualPrice : plan.monthlyPrice}
+                      €{isAnnual ? plan.annualPrice : plan.monthlyPrice}
                     </span>
                     <span className="text-gray-600 ml-2 mb-1">/ month</span>
                   </div>
                   {isAnnual && (
                     <p className="text-green-600 text-sm mt-1">
-                      ${((plan.monthlyPrice - plan.annualPrice) * 12).toFixed(2)} saved annually
+                      €{((plan.monthlyPrice - plan.annualPrice) * 12).toFixed(2)} saved annually
                     </p>
                   )}
                 </div>
@@ -187,7 +170,7 @@ export const Pricing = () => {
                         : "bg-white border border-[#007BFF] text-[#007BFF] hover:bg-blue-50"
                     } transition-colors duration-300`}
                   >
-                    Start Free Trial
+                    Get Started
                   </a>
                 </motion.div>
               </div>
@@ -200,18 +183,12 @@ export const Pricing = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center bg-gray-50 p-6 rounded-lg"
+          className="mt-12 text-center bg-gray-50 p-6 rounded-lg max-w-4xl mx-auto"
         >
           <p className="text-gray-700 mb-2 font-semibold">
             All plans include:
           </p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 max-w-3xl mx-auto">
-            <div className="flex items-center">
-              <svg className="h-5 w-5 text-[#007BFF] mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span>7-day free trial</span>
-            </div>
             <div className="flex items-center">
               <svg className="h-5 w-5 text-[#007BFF] mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />

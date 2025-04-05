@@ -8,8 +8,8 @@ export const Features = () => {
   const features = [
     {
       id: 1,
-      title: "AI-Powered Workout Plans",
-      description: "Receive customized training plans that adapt to your progress, preferences, and available equipment. Our AI analyzes thousands of exercises to find the perfect match for your goals.",
+      title: "Professional Workout Plans",
+      description: "Receive customized training plans that adapt to your progress, preferences, and available equipment. Our experts analyze thousands of exercises to find the perfect match for your goals.",
       benefit: "Skip the guesswork and trial-and-error. Get a scientifically optimized plan that maximizes your results while minimizing your time investment.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">

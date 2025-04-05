@@ -100,7 +100,7 @@ export const CTASection = () => {
                     type="submit"
                     className="w-full py-3 px-6 bg-white text-[#007BFF] font-bold rounded-lg shadow-md hover:bg-blue-50 transition-colors duration-300"
                   >
-                    Start Your Free Trial
+                   Get Started
                   </button>
                 </motion.div>
                 <p className="text-sm text-blue-100 text-center">

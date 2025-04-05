@@ -14,7 +14,7 @@ export const HeroSection = () => {
             className="z-10"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Your Personal AI Fitness Coach, Available 24/7
+              Your Personal Fitness Coach, Available 24/7
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">
               Achieve your fitness goals faster with personalized workouts, nutrition plans, and progress tracking all in one app.
@@ -28,7 +28,7 @@ export const HeroSection = () => {
                   href="#signup" 
                   className="inline-flex justify-center items-center px-8 py-3 border border-transparent rounded-md shadow-lg text-lg font-medium text-[#007BFF] bg-white hover:bg-gray-100 w-full sm:w-auto"
                 >
-                  Start Free Trial
+                  Get Started
                 </Link>
               </motion.div>
               <motion.div

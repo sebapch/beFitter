@@ -86,14 +86,14 @@ export const Benefits = () => {
             <div className="bg-gray-50 p-8 rounded-lg border-l-4 border-[#007BFF] shadow-md">
               <h3 className="text-2xl font-bold text-gray-800 mb-4">The Solution</h3>
               <p className="text-gray-700 mb-6 italic">
-                "Imagine having a personal trainer, nutritionist, and accountability coach in your pocket, 24/7, for a fraction of the cost."
+                "Imagine having a personal trainer, nutritionist, and accountability coach in your pocket, 24/7."
               </p>
               <div className="bg-white p-6 rounded-lg shadow-inner">
                 <p className="text-gray-800 font-semibold mb-4">
-                  Introducing <span className="text-[#007BFF] font-bold">BeFitter</span> – Your AI-powered fitness companion that adapts to your body, goals, and lifestyle.
+                  Introducing <span className="text-[#007BFF] font-bold">BeFitter</span> – Your professional fitness companion that adapts to your body, goals, and lifestyle.
                 </p>
                 <p className="text-gray-700">
-                  Our app creates personalized workout and nutrition plans that evolve as you progress. Stay accountable, track your results, and finally achieve the fitness goals you've been chasing.
+                  Our app provides personalized workout and nutrition plans that evolve as you progress. Stay accountable, track your results, and finally achieve the fitness goals you've been chasing.
                 </p>
               </div>
 

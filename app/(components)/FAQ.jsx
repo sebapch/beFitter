@@ -34,10 +34,10 @@ export const FAQ = () => {
       question: "What if I don't like a workout or it's too difficult?",
       answer: "You can provide feedback after each workout, and the AI will adjust future recommendations accordingly. If a workout feels too challenging, you can select the 'too difficult' option, and the app will scale back the intensity. You can also swap exercises or choose alternative workouts if preferred."
     },
-    {
+    /* {
       question: "What happens after my free trial ends?",
       answer: "After your 7-day free trial, you'll be automatically subscribed to your selected plan unless you cancel beforehand. You can cancel anytime directly in the app or on your account page with no questions asked. We'll send a reminder email before your trial ends."
-    }
+    } */
   ];
 
   const containerVariants = {
