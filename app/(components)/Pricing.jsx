@@ -1,9 +1,15 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { loadStripe } from '@stripe/stripe-js';
+
+// Carga Stripe fuera del componente para evitar recargas innecesarias
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
 export const Pricing = () => {
-  const [isAnnual, setIsAnnual] = useState(true);
+  const [isAnnual, setIsAnnual] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(null);
 
   const plans = [
     {
@@ -39,6 +45,58 @@ export const Pricing = () => {
       popular: true
     }
   ];
+
+  const handleSubscription = async (planId) => {
+    try {
+      setIsLoading(true);
+      setButtonClicked(planId);
+      
+      console.log(`Iniciando checkout para plan ${planId === 1 ? 'Standard' : 'VIP'} ${isAnnual ? 'anual' : 'mensual'}...`);
+      
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          planId: planId,
+          isAnnual: isAnnual
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error?.message || 'Error en la comunicación con el servidor');
+      }
+
+      const { sessionId } = await response.json();
+      console.log("Session ID obtenido:", sessionId);
+      
+      if (!sessionId) {
+        throw new Error('No se recibió un ID de sesión válido');
+      }
+      
+      const stripe = await stripePromise;
+      if (!stripe) {
+        throw new Error('No se pudo cargar Stripe');
+      }
+      
+      console.log("Redirigiendo a Stripe Checkout...");
+      const { error } = await stripe.redirectToCheckout({
+        sessionId,
+      });
+
+      if (error) {
+        console.error('Error al redirigir a Stripe Checkout:', error);
+        throw new Error(error.message);
+      }
+    } catch (error) {
+      console.error('Error al iniciar el checkout:', error);
+      alert(`Error: ${error.message}`);
+      setIsLoading(false);
+      setButtonClicked(null);
+    }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -162,22 +220,33 @@ export const Pricing = () => {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <a 
-                    href="#signup" 
+                  <button 
+                    onClick={() => handleSubscription(plan.id)}
+                    disabled={isLoading}
                     className={`block w-full text-center py-3 px-4 rounded-lg font-medium ${
                       plan.popular 
                         ? "bg-[#007BFF] text-white hover:bg-blue-600" 
                         : "bg-white border border-[#007BFF] text-[#007BFF] hover:bg-blue-50"
-                    } transition-colors duration-300`}
+                    } transition-colors duration-300 ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
                   >
-                    Get Started
-                  </a>
+                    {isLoading && buttonClicked === plan.id ? (
+                      <span className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Procesando...
+                      </span>
+                    ) : (
+                      'Get Started'
+                    )}
+                  </button>
                 </motion.div>
               </div>
             </motion.div>
           ))}
         </motion.div>
-
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -209,6 +278,20 @@ export const Pricing = () => {
             </div>
           </div>
         </motion.div>
+
+        <div className="mt-8 text-center">
+          <div className="flex justify-center items-center mb-2">
+            <p className="text-gray-500 text-sm mr-2">Pago seguro con</p>
+            <svg className="h-6" viewBox="0 0 60 25" xmlns="http://www.w3.org/2000/svg">
+              <path d="M59.4 0H0V25H59.4V0Z" fill="white"/>
+              <path d="M59.4 0H0V25H59.4V0ZM55.7 21.2H3.7V3.8H55.7V21.2Z" fill="#32325D"/>
+              <path d="M33.1 14.5C33.1 12.1 35.1 10.2 37.5 10.2C39.9 10.2 41.9 12.1 41.9 14.5C41.9 16.9 39.9 18.9 37.5 18.9C35.1 18.9 33.1 16.9 33.1 14.5ZM17.8 14.5C17.8 12.1 19.8 10.2 22.2 10.2C24.6 10.2 26.6 12.1 26.6 14.5C26.6 16.9 24.6 18.9 22.2 18.9C19.8 18.9 17.8 16.9 17.8 14.5Z" fill="#6772E5"/>
+            </svg>
+          </div>
+          <p className="text-gray-500 text-xs">
+            Todos los pagos son procesados de forma segura. No se requiere cuenta para comprar.
+          </p>
+        </div>
       </div>
     </section>
   );
