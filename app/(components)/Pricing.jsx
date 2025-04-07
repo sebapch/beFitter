@@ -6,6 +6,8 @@ import { loadStripe } from '@stripe/stripe-js';
 // Carga Stripe fuera del componente para evitar recargas innecesarias
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
+console.log("Stripe public key:", process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+
 export const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
