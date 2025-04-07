@@ -49,8 +49,8 @@ export async function POST(request) {
         },
       ],
       mode: 'subscription',
-      success_url: `${process.env.NEXTAUTH_URL || 'http://localhost:3003'}/success?session_id={CHECKOUT_SESSION_ID}&plan=${planId}&billing=${isAnnual ? 'annual' : 'monthly'}`,
-      cancel_url: `${process.env.NEXTAUTH_URL || 'http://localhost:3003'}/cancel`,
+      success_url: `/success?session_id={CHECKOUT_SESSION_ID}&plan=${planId}&billing=${isAnnual ? 'annual' : 'monthly'}`,
+      cancel_url: `/cancel`,
       // Solicita email y teléfono en el checkout
       billing_address_collection: 'required',
       phone_number_collection: {
