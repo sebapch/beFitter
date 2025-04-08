@@ -308,9 +308,8 @@ export const Pricing = () => {
         {/* Secure Payment Footer */}
         <div className="mt-12 text-center">
           <div className="flex justify-center items-center mb-2 space-x-2">
-            <span className="text-gray-500 text-sm">Secure payments via</span>
+            <span className="text-gray-500 text-sm">Secure payments via STRIPE</span>
             {/* Basic Stripe Logo SVG */}
-            <svg role="img" aria-label="Stripe" className="h-6" viewBox="0 0 40 17" xmlns="http://www.w3.org/2000/svg"><path d="M8.44 16.84h3.21l-3.1-16.1H5.33l-3.1 16.1h3.21l.72-3.8h3.56l.72 3.8zM9.1 6.24L10.04 11h-2.1L9.1 6.24zM15.63 5.14c-1.1 0-1.9.43-2.44 1.07-.54.65-.8 1.5-.8 2.58v5.9h-3.05V5.43h2.9V6.7c.5-.94 1.37-1.56 2.52-1.56 1.96 0 3.26 1.37 3.26 3.77v5.88h-3.05V9.19c0-.87-.3-1.5-1.1-1.5-.67 0-1.1.43-1.1 1.2v5.84h-3.05V9.19c0-1.5.8-2.72 2.45-2.72.98 0 1.7.45 2.18 1.18V5.43h2.9V15.7h-3.05V9.19c0-1.96-1.14-4.05-3.4-4.05zM24.84 16.84h3.05V5.43h-3.05v11.41zm3.89-11.41h3.04v11.4h-3.04V5.44zM39.56 7.24c0-1.3-.88-2.1-2.3-2.1-1.1 0-1.9.4-2.56 1.1v7.29h-3.05V5.43h2.9V6.7c.48-.88 1.37-1.56 2.52-1.56 1.97 0 3.45 1.34 3.45 3.77v6.78h-3.26V7.24z" fill="#6772e5"></path></svg>
           </div>
           <p className="text-gray-500 text-xs">
             Industry-standard encryption. No account needed for purchase.
