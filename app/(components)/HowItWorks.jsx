@@ -15,8 +15,8 @@ export const HowItWorks = () => {
     },
     {
       id: 2,
-      title: "Get Your Personalized Plan",
-      description: "Our AI instantly creates your custom workout and nutrition plans tailored to your unique needs and goals.",
+      title: "Receive Your Custom Plan",
+      description: "Based on your profile, we select the perfect workout and nutrition guide designed to meet your specific needs.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
           <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
@@ -35,8 +35,8 @@ export const HowItWorks = () => {
     },
     {
       id: 4,
-      title: "See Your Progress & Adapt",
-      description: "Monitor your improvements, celebrate milestones, and watch as your plan evolves based on your feedback and results.",
+      title: "Track Your Progress & Stay Motivated",
+      description: "Monitor your improvements, celebrate milestones, and easily adjust your routine as you get stronger.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
           <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -78,7 +78,7 @@ export const HowItWorks = () => {
             Four Simple Steps to Your Fitness Transformation
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-            Getting started with BeFitter is easy and takes just minutes. Here's how it works:
+            Getting started with BeFitter is easy and straightforward. Here's how it works:
           </p>
           <div className="w-20 h-1 bg-[#007BFF] mx-auto mt-6"></div>
         </motion.div>
@@ -121,7 +121,7 @@ export const HowItWorks = () => {
         >
           <div className="inline-block bg-white px-6 py-3 rounded-lg shadow-md border border-gray-200">
             <p className="text-gray-700 font-medium">
-              Ready to start your fitness journey? <span className="text-[#007BFF] font-bold">Create your account today and get your first plan in minutes.</span>
+              Ready to start your fitness journey? <span className="text-[#007BFF] font-bold">Create your account today and access your tailored plan.</span>
             </p>
           </div>
         </motion.div>
