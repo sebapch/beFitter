@@ -19,8 +19,8 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       {/* <Benefits /> */}
-      <AppShowcase />
       <HowItWorks />
+      <AppShowcase />
       <Features />
       <Testimonials />
       <Pricing />
