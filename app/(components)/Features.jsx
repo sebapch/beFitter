@@ -172,7 +172,7 @@ export const Features = () => {
                   <p className="text-gray-700">{features[activeFeature].benefit}</p>
                 </div>
 
-                <div className="mt-6 flex justify-center">
+                {/* <div className="mt-6 flex justify-center">
                   <div className="w-full md:w-3/4 h-48 bg-gray-100 rounded-lg flex items-center justify-center relative overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center text-gray-300">
                       <div className="text-6xl text-[#007BFF] opacity-30">
@@ -186,7 +186,7 @@ export const Features = () => {
                       </p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </motion.div>

@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export const AppShowcase = () => {
   const appFeatures = [
@@ -52,52 +53,13 @@ export const AppShowcase = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5"
           >
-            {/* Phone mockup */}
-            <div className="relative mx-auto w-[280px] h-[570px] bg-black rounded-[36px] shadow-xl border-[8px] border-black overflow-hidden">
-              {/* Phone notch */}
-              <div className="absolute top-0 left-0 right-0 h-6 bg-black z-10">
-                <div className="mx-auto w-36 h-5 bg-black rounded-b-xl"></div>
-              </div>
-              
-              {/* Screen content */}
-              <div className="h-full bg-[#007BFF] pt-6 pb-4 px-4 overflow-hidden">
-                <div className="h-full rounded-2xl bg-white overflow-hidden">
-                  {/* App header */}
-                  <div className="p-4 bg-[#007BFF] text-white flex justify-between items-center">
-                    <div>
-                      <h4 className="font-bold">BeFitter</h4>
-                      <p className="text-xs text-blue-100">Your Daily Workout</p>
-                    </div>
-                    <div className="h-8 w-8 bg-white/20 rounded-full flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                  
-                  {/* App content */}
-                  <div className="p-4 space-y-4">
-                    <div className="rounded-lg bg-blue-50 p-3">
-                      <div className="text-sm font-bold text-blue-800">Today's Workout Progress</div>
-                      <div className="h-2 bg-gray-200 rounded-full mt-2">
-                        <div className="h-2 bg-[#007BFF] rounded-full w-3/4"></div>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">3 of 4 exercises completed</div>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      {appFeatures.map((feature, index) => (
-                        <div key={index} className="rounded-lg bg-gray-100 p-3 relative overflow-hidden">
-                          <div className={`absolute top-0 left-0 w-1 h-full ${feature.color}`}></div>
-                          <div className="font-semibold">{feature.title}</div>
-                          <div className="text-xs text-gray-500 mt-1">{feature.description}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Image
+              src="/captura4.png" 
+              alt="App Showcase" 
+              className=""
+              width={500}
+              height={500}
+            />
           </motion.div>
           
           <motion.div

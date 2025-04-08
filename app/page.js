@@ -18,7 +18,7 @@ export default function Home() {
     <main className="font-oswald bg-white text-gray-900">
       <Navbar />
       <HeroSection />
-      <Benefits />
+      {/* <Benefits /> */}
       <AppShowcase />
       <HowItWorks />
       <Features />
