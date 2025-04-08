@@ -16,7 +16,8 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    // --- Dark Mode Changes Start Here ---
+    <nav className="bg-gray-900 shadow-lg sticky top-0 z-50"> {/* Dark background, maybe stronger shadow */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
@@ -25,7 +26,7 @@ export const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              {/* Make logo link also close mobile menu if open */}
+              {/* Logo color remains the same bright blue for contrast */}
               <Link href="/" className="text-2xl font-bold text-[#007BFF]" onClick={() => isOpen && setIsOpen(false)}>
                 BeFitter
               </Link>
@@ -40,9 +41,10 @@ export const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
+              {/* Button colors adjusted slightly if needed, but current ones work well on dark */}
               <Link
                 href="#signup"
-                className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#007BFF] hover:bg-blue-700 transition-colors duration-200"
+                className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#007BFF] hover:bg-blue-600 transition-colors duration-200" // Slightly brighter hover
               >
                 Get Started
               </Link>
@@ -52,9 +54,10 @@ export const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-[#007BFF] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#007BFF]"
-              aria-controls="mobile-menu" // Added aria-controls
-              aria-expanded={isOpen} // Dynamically set aria-expanded
+              // Hamburger icon color and hover state adjusted for dark bg
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" // Adjusted focus ring color
+              aria-controls="mobile-menu"
+              aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? (
@@ -73,25 +76,29 @@ export const Navbar = () => {
 
       {/* Mobile menu */}
       <motion.div
-        id="mobile-menu" // Added ID for aria-controls
-        className={`md:hidden ${isOpen ? 'block' : 'hidden'}`} // Use hidden/block for accessibility
+        id="mobile-menu"
+        // Background is inherited from nav (bg-gray-900)
+        className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}
         initial={{ opacity: 0, height: 0 }}
         animate={{
           opacity: isOpen ? 1 : 0,
           height: isOpen ? 'auto' : 0,
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        style={{ overflow: 'hidden' }} // Prevent content flash during animation
+        style={{ overflow: 'hidden' }}
       >
-        <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3 border-t border-gray-100">
+        {/* Adjusted padding/border for dark mode */}
+        <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3 border-t border-gray-700"> {/* Darker border */}
           {navItems.map((item) => (
               <MobileNavLink key={item.href} href={item.href} onClick={() => setIsOpen(false)}>{item.label}</MobileNavLink>
           ))}
-          <div className="pt-3 mt-3 border-t border-gray-100">
+          {/* Adjusted padding/border for dark mode */}
+          <div className="pt-3 mt-3 border-t border-gray-700"> {/* Darker border */}
             <Link
               href="#signup"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center px-4 py-2.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#007BFF] hover:bg-blue-700 transition-colors duration-200"
+              // Button colors same as desktop
+              className="block w-full text-center px-4 py-2.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#007BFF] hover:bg-blue-600 transition-colors duration-200" // Slightly brighter hover
             >
               Get Started
             </Link>
@@ -99,17 +106,19 @@ export const Navbar = () => {
         </div>
       </motion.div>
     </nav>
+    // --- Dark Mode Changes End Here ---
   );
 };
 
-// Sub-components (no changes needed here, but kept for completeness)
+// Sub-components adjusted for Dark Mode
 const NavLink = ({ href, children }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="relative" // For potential future underline effects
+      className="relative"
     >
-      <Link href={href} className="text-base font-medium text-gray-700 hover:text-[#007BFF] transition-colors duration-200 px-1 py-1">
+      {/* Text color and hover color adjusted */}
+      <Link href={href} className="text-base font-medium text-gray-300 hover:text-white transition-colors duration-200 px-1 py-1">
         {children}
       </Link>
     </motion.div>
@@ -120,8 +129,9 @@ const MobileNavLink = ({ href, onClick, children }) => {
   return (
     <Link
       href={href}
-      onClick={onClick} // Close menu on click
-      className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:text-[#007BFF] hover:bg-gray-50 transition-colors duration-200"
+      onClick={onClick}
+      // Text color and hover color/bg adjusted
+      className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition-colors duration-200"
     >
       {children}
     </Link>

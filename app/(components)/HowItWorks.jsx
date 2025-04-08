@@ -65,7 +65,8 @@ export const HowItWorks = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50" id="how-it-works">
+    // --- Dark Mode Changes Start Here ---
+    <section className="py-16 md:py-24 bg-gray-900 text-gray-300" id="how-it-works"> {/* Dark background, lighter base text */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,12 +75,15 @@ export const HowItWorks = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {/* Brighter heading text */}
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Four Simple Steps to Your Fitness Transformation
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+          {/* Lighter paragraph text */}
+          <p className="text-gray-400 max-w-3xl mx-auto text-lg">
             Getting started with BeFitter is easy and straightforward. Here's how it works:
           </p>
+          {/* Accent line color remains the same, contrasts well */}
           <div className="w-20 h-1 bg-[#007BFF] mx-auto mt-6"></div>
         </motion.div>
 
@@ -94,19 +98,24 @@ export const HowItWorks = () => {
             <motion.div
               key={step.id}
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#007BFF] hover:shadow-xl transition-shadow duration-300"
+              // Darker card background, adjusted shadow/hover, same border accent
+              className="bg-gray-800 rounded-lg shadow-lg p-6 border-t-4 border-[#007BFF] hover:shadow-xl hover:shadow-blue-500/10 transition-shadow duration-300" // Optional: Subtle blue glow on hover
             >
               <div className="flex items-center justify-center mb-6">
+                 {/* Icon background remains the same, contrasts well */}
                 <div className="bg-[#007BFF] text-white p-3 rounded-full">
                   {step.icon}
                 </div>
               </div>
               <div className="text-center">
-                <span className="inline-block bg-blue-100 text-[#007BFF] font-bold rounded-full w-8 h-8 flex items-center justify-center mb-3">
+                {/* Step number circle: Darker background, lighter text */}
+                <span className="inline-block bg-gray-700 text-blue-400 font-bold rounded-full w-8 h-8 flex items-center justify-center mb-3">
                   {step.id}
                 </span>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                 {/* Brighter title text */}
+                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                 {/* Lighter description text */}
+                <p className="text-gray-400">{step.description}</p>
               </div>
             </motion.div>
           ))}
@@ -119,13 +128,15 @@ export const HowItWorks = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <div className="inline-block bg-white px-6 py-3 rounded-lg shadow-md border border-gray-200">
-            <p className="text-gray-700 font-medium">
-              Ready to start your fitness journey? <span className="text-[#007BFF] font-bold">Create your account today and access your tailored plan.</span>
+           {/* Darker callout background, adjusted border/text */}
+          <div className="inline-block bg-gray-800 px-6 py-3 rounded-lg shadow-md border border-gray-700">
+            <p className="text-gray-300 font-medium"> {/* Lighter text */}
+              Ready to start your fitness journey? <span className="text-[#007BFF] font-bold">Create your account today and access your tailored plan.</span> {/* Accent remains */}
             </p>
           </div>
         </motion.div>
       </div>
     </section>
+     // --- Dark Mode Changes End Here ---
   );
 };
