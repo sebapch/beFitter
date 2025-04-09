@@ -77,13 +77,22 @@ export const Pricing = () => {
   const handleSubscription = async (plan) => {
     if (isLoading || plan.isContact) return;
     setIsLoading(true);
-    setButtonClicked(plan.id);
+    setButtonClicked(plan.id); // Keep track of which button was clicked
 
     const priceId = isAnnual ? plan.stripePriceIdAnnual : plan.stripePriceIdMonthly;
 
+    // --- Input Validation ---
+    if (!plan.id || typeof isAnnual !== 'boolean') { // Added check for plan.id and isAnnual type
+      console.error('Internal Error: Plan ID or Annual Status is missing before sending.');
+      alert('An internal error occurred. Please try again.');
+      setIsLoading(false);
+      setButtonClicked(null);
+      return;
+    }
+
     if (!priceId) {
       console.error(`Stripe Price ID not found for Plan ID ${plan.id} (${isAnnual ? 'Annual' : 'Monthly'})`);
-      alert('Configuration error: Price ID is missing.');
+      alert('Configuration error: Price ID is missing for the selected plan/duration.');
       setIsLoading(false);
       setButtonClicked(null);
       return;
@@ -96,25 +105,38 @@ export const Pricing = () => {
       setButtonClicked(null);
       return;
     }
-
+    // --- End Validation ---
 
     try {
-      console.log(`Initiating checkout for Price ID ${priceId}...`);
-      const response = await fetch('/api/create-checkout-session', { // Ensure this API route exists and works
+      console.log(`Initiating checkout for Plan ID ${plan.id}, Annual: ${isAnnual}, Price ID ${priceId}...`); // Log more info
+
+      const response = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        // Send the specific PRICE ID, not the plan ID
-        body: JSON.stringify({ priceId: priceId }),
+        // ***** FIX: Send planId and isAnnual along with priceId *****
+        body: JSON.stringify({
+          planId: plan.id,       // Pass the plan's unique ID (e.g., 1, 2)
+          isAnnual: isAnnual,    // Pass the current toggle state (true/false)
+          priceId: priceId       // Pass the specific Stripe Price ID
+        }),
+        // ***********************************************************
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error?.message || 'Error creating checkout session');
+        let errorData;
+        try {
+           errorData = await response.json();
+        } catch (parseError) {
+          // If the response isn't valid JSON
+           errorData = { error: { message: `Server error: ${response.statusText}` }};
+        }
+        // Use the backend's error message if available, otherwise provide a generic one
+        throw new Error(errorData.error?.message || `Error creating checkout session (Status: ${response.status})`);
       }
 
       const { sessionId } = await response.json();
-      console.log("Session ID:", sessionId);
-      if (!sessionId) throw new Error('Invalid session ID received');
+      console.log("Received Session ID:", sessionId);
+      if (!sessionId) throw new Error('Invalid session ID received from server');
 
       const stripe = await stripePromise;
       if (!stripe) throw new Error('Stripe.js failed to load');
@@ -124,18 +146,19 @@ export const Pricing = () => {
 
       if (error) {
         console.error('Stripe redirection error:', error);
-        // Don't throw here, Stripe handles showing the error message typically
+        // Stripe's own UI usually shows the error, but alerting is a fallback
         alert(`Stripe Error: ${error.message}`);
-        setIsLoading(false); // Allow retry
+        // Don't throw here, let the user potentially try again
+        setIsLoading(false);
         setButtonClicked(null);
       }
-      // On successful redirect, this component might unmount or the page changes,
-      // so setting isLoading back to false might not execute. It's handled in catch block.
+      // If redirection is successful, the page navigates away.
+      // No need to reset isLoading here in the success path.
 
     } catch (error) {
       console.error('Checkout handling error:', error);
-      alert(`Error: ${error.message}`);
-      setIsLoading(false);
+      alert(`Error: ${error.message}`); // Display the specific error caught
+      setIsLoading(false); // Reset loading state on any failure
       setButtonClicked(null);
     }
   };
