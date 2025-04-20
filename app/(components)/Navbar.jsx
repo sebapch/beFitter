@@ -3,21 +3,24 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-export const Navbar = () => { // Mantenemos el nombre
+// Navbar para Gym Owners (Estilo Dark Usuario - CORREGIDO ORDEN)
+export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Links específicos para Gym Owners
+  // --- CORRECCIÓN: Ordenar navItems según el flujo de la página ---
   const navItems = [
-    { href: "#features", label: "Features" },
+    // Asegúrate de que este orden coincida con el orden de las secciones en tu archivo de página
     { href: "#how-it-works", label: "How It Works" },
-    { href: "#pricing", label: "Pricing" },
+    { href: "#features", label: "Features" },
     { href: "#testimonials", label: "Testimonials" },
+    { href: "#pricing", label: "Pricing" },
     { href: "#faq", label: "FAQ" },
+    // { href: "#demo", label: "Demo" }, // Opcional: añadir si no quieres el botón separado
   ];
+  // --- FIN CORRECCIÓN ---
 
   return (
-    // --- Adopta Estilo Dark Navbar Usuario ---
-    <nav className="bg-gray-900 shadow-lg sticky top-0 z-50"> {/* Fondo oscuro, sombra */}
+    <nav className="bg-gray-900 shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
@@ -26,27 +29,26 @@ export const Navbar = () => { // Mantenemos el nombre
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              {/* Logo azul brillante para contraste */}
               <Link href="/" className="text-2xl font-bold text-[#007BFF]" onClick={() => isOpen && setIsOpen(false)}>
-                BeFitter<span className="text-xs text-gray-400 ml-1 align-super">for Gyms</span> {/* Opcional: Añadir indicativo */}
+                BeFitter<span className="text-xs text-gray-400 ml-1 align-super">for Gyms</span>
               </Link>
             </motion.div>
           </div>
-          {/* Menú Desktop */}
+          {/* Menú Desktop - Renderiza los items en el orden CORREGIDO */}
           <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
              {navItems.map((item) => (
                  <NavLink key={item.href} href={item.href}>{item.label}</NavLink>
              ))}
+            {/* Botón Demo apunta a la sección #demo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {/* Botón con estilo oscuro */}
               <Link
-                href="#demo" // Enlace a Demo para Gyms
+                href="#demo"
                 className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#007BFF] hover:bg-blue-600 transition-colors duration-200"
               >
-                Request Demo {/* Texto específico Gym */}
+                Request Demo
               </Link>
             </motion.div>
           </div>
@@ -54,7 +56,6 @@ export const Navbar = () => { // Mantenemos el nombre
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              // Estilo oscuro para hamburguesa
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
@@ -70,38 +71,35 @@ export const Navbar = () => { // Mantenemos el nombre
         </div>
       </div>
 
-      {/* Menú Móvil */}
+      {/* Menú Móvil - Renderiza los items en el orden CORREGIDO */}
       <motion.div
         id="mobile-menu"
         className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}
         initial={{ opacity: 0, height: 0 }}
         animate={{ opacity: isOpen ? 1 : 0, height: isOpen ? 'auto' : 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        style={{ overflow: 'hidden', background: 'inherit' /* Hereda bg-gray-900 */ }}
+        style={{ overflow: 'hidden', background: 'inherit' }}
       >
-        {/* Estilo oscuro para el contenido del menú móvil */}
-        <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3 border-t border-gray-700"> {/* Borde oscuro */}
+        <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3 border-t border-gray-700">
           {navItems.map((item) => (
               <MobileNavLink key={item.href} href={item.href} onClick={() => setIsOpen(false)}>{item.label}</MobileNavLink>
           ))}
-          <div className="pt-3 mt-3 border-t border-gray-700"> {/* Borde oscuro */}
+          <div className="pt-3 mt-3 border-t border-gray-700">
             <Link
-              href="#demo" // Enlace a Demo
+              href="#demo"
               onClick={() => setIsOpen(false)}
-              // Estilo oscuro para el botón
               className="block w-full text-center px-4 py-2.5 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#007BFF] hover:bg-blue-600 transition-colors duration-200"
             >
-              Request Demo {/* Texto específico Gym */}
+              Request Demo
             </Link>
           </div>
         </div>
       </motion.div>
     </nav>
-    // --- Fin Estilo Dark Navbar ---
   );
 };
 
-// Subcomponentes NavLink y MobileNavLink con estilo oscuro (iguales al del usuario)
+// Subcomponentes NavLink y MobileNavLink (sin cambios necesarios aquí)
 const NavLink = ({ href, children }) => {
   return (
     <motion.div whileHover={{ scale: 1.05 }} className="relative">
