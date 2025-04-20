@@ -1,6 +1,7 @@
-'use client';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
 
+// NO se cambia el nombre del componente según la petición
 export const HowItWorks = () => {
   const steps = [
     {
@@ -8,6 +9,7 @@ export const HowItWorks = () => {
       title: "Brand It Your Way",
       description: "Easily upload your logo, choose your brand colors, and make the app uniquely yours in minutes. No coding required.",
       icon: (
+        // El icono hereda el color del texto padre (text-white)
         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
           <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
         </svg>
@@ -50,7 +52,7 @@ export const HowItWorks = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.2 // Efecto escalonado para los items
       }
     }
   };
@@ -64,68 +66,87 @@ export const HowItWorks = () => {
     }
   };
 
+  // Fondo ligeramente diferente al anterior para separación visual
+  const currentBgColor = "bg-slate-800";
+
   return (
-    <section className="py-16 md:py-24 bg-gray-50" id="how-it-works">
+    // --- Dark Mode Theme for Gym Owners - How It Works Section ---
+    <section className={`py-16 md:py-24 ${currentBgColor} text-white`} id="how-it-works">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* --- Título de la Sección --- */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.3 }} // Ajustado viewport
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4">
             Seamless Integration, Powerful Results: Your Gym, Your App, Your Success.
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+          {/* Texto descriptivo adaptado */}
+          <p className="text-slate-300 max-w-3xl mx-auto text-lg">
             Our white-label platform is designed to integrate effortlessly with your gym's operations, empowering both trainers and members.
           </p>
+          {/* Línea divisora con color de acento */}
           <div className="w-20 h-1 bg-[#007BFF] mx-auto mt-6"></div>
         </motion.div>
 
+        {/* --- Grid de Pasos --- */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.2 }} // Trigger cuando el 20% es visible
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {steps.map((step) => (
             <motion.div
               key={step.id}
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#007BFF] hover:shadow-xl transition-shadow duration-300"
+              // Card con fondo oscuro, borde superior de acento y sombra adaptada
+              className="bg-slate-700 rounded-lg shadow-lg p-6 border-t-4 border-[#007BFF] hover:shadow-blue-900/30 transition-shadow duration-300 flex flex-col items-center text-center" // Centrado de contenido
             >
-              <div className="flex items-center justify-center mb-6">
-                <div className="bg-[#007BFF] text-white p-3 rounded-full">
+              {/* Icono con fondo de acento */}
+              <div className="flex-shrink-0 mb-5">
+                <div className="bg-[#007BFF] text-white p-3 rounded-full shadow-md">
                   {step.icon}
                 </div>
               </div>
-              <div className="text-center">
-                <span className="inline-block bg-blue-100 text-[#007BFF] font-bold rounded-full w-8 h-8 flex items-center justify-center mb-3">
+
+              {/* Contenido de texto */}
+              <div className="flex-grow">
+                {/* Número del paso con fondo oscuro y texto claro */}
+                <span className="inline-block bg-slate-600 text-slate-100 font-bold rounded-full w-8 h-8 flex items-center justify-center mb-4 mx-auto">
                   {step.id}
                 </span>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                {/* Título del paso */}
+                <h3 className="text-xl font-bold text-gray-100 mb-3">{step.title}</h3>
+                {/* Descripción del paso */}
+                <p className="text-slate-300 text-sm">{step.description}</p> {/* Texto ligeramente más pequeño */}
               </div>
             </motion.div>
           ))}
         </motion.div>
 
+        {/* --- Callout Final --- */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true, amount: 0.5 }} // Trigger al 50%
+          transition={{ duration: 0.5, delay: 0.4 }} // Delay para aparecer después de los items
           className="mt-16 text-center"
         >
-          <div className="inline-block bg-white px-6 py-3 rounded-lg shadow-md border border-gray-200">
-            <p className="text-gray-700 font-medium">
+          {/* Caja con fondo oscuro, borde sutil y sombra */}
+          <div className="inline-block bg-slate-700 px-6 py-4 rounded-lg shadow-md border border-slate-600">
+            {/* Texto adaptado */}
+            <p className="text-slate-200 font-medium">
               Ready to transform your gym's digital experience? <span className="text-[#007BFF] font-bold">It only takes 3 days to launch your custom app.</span>
             </p>
           </div>
         </motion.div>
       </div>
     </section>
+    // --- Fin Dark Mode Theme ---
   );
 };
